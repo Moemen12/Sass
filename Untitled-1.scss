@@ -389,3 +389,32 @@ $gap: 20px;
 
 //Second
 
+// SASS Code
+$main-color: red;
+$alt-color: blue;
+
+// Needed Output
+/* Theme Version: 1.0 */
+/* Website Theme Main Color Is: #{$main-color} */
+/* Website Theme Alternate Color Is: #{$alt-color} */
+
+//Third
+$number:10;
+
+.class {
+@if $number>8 {
+    color:blue;
+}
+@else if $number>5{
+    color:green;
+}
+@else{
+    color :red;
+}
+
+}
+
+//Fourth
+
+
+
