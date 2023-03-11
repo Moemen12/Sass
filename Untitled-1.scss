@@ -1,0 +1,361 @@
+// // Import global rules
+// @use './layout/pages/global-rules';
+
+// @use './layout/pages/contact';
+
+// @use './layout/variable/colors' as *;
+// //Global variable
+// $alt_color:yellow;
+
+// .footer{
+//     $alt_color:black !global; //overiting the color and make $alt_color=black
+//     $background-color:$alt_color;
+// }
+
+// .header{
+//     color: $alt_color;
+// }
+// .copyright{
+//     background-color: $alt_color;
+// }
+
+// .side-bar{
+//     background-color: $main;
+//     color: $alt;
+// }
+
+//Nesting and parent element without sass
+// .parent{
+//     font-weight: bold;
+// }
+// .parent .child{
+//     font-size: 20px;
+// }
+
+// .parent .child .grand-child{
+//     font-size: 15px;
+// }
+
+//Nesting and parent element using sass
+
+.parent{
+    font-weight: bold;
+    .child{
+        font-size: 20px;
+    }
+    .grand-child{
+        font-size: 15px;
+    }
+}
+
+
+.parent>{
+    .child{
+        color:green;
+    }
+}
+
+.parent{
+> .child{
+        color:green;
+    }
+    .test{
+        color: blue;
+    }
+    + p{
+        font-size: 15px;
+    }
+}
+
+.parent{
+    >{
+        .element-one{
+            font-size: 10px;
+        }
+        .element-two{
+            font-size: 10px;
+        }
+    }
+    .not-direct-child{
+        font-weight: bold;
+    }
+}
+
+.box{
+    .title{
+      font-size: 10px; 
+    }
+    .description{
+      font-family: 'Courier New', Courier, monospace;
+    }
+    &.red{
+        color: red;
+    } 
+    &:hover {
+         background-color: yellow;
+    }
+    &:hover{
+        .title{
+            font-size: larger;
+        }
+    }
+    :not(&){
+        font-weight: normal;
+    }
+    [dir=rtl] & {
+        direction: rtl;
+    }
+}
+.box{
+    font-size: 20px;
+    font:{
+        size: 40px;
+        weight:bold;
+    }
+    padding: 20px;
+    margin: auto {
+        top: 10px;
+        bottom: 15px;
+    }
+}
+
+.main-box{
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #ccc;
+}
+.ads{
+    @extend .main-box;
+    font-size: 20px;
+    color:red;
+}
+.article{
+    @extend .main-box;
+    font-size: 22px;
+    color:green; 
+}
+
+%main-box1{
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #ccc;
+}
+.ads1{
+    @extend %main-box1;
+    font-size: 20px;
+    color:red;
+}
+.article1{
+    @extend %main-box1;
+    font-size: 22px;
+    color:green; 
+}
+
+$theme:'light';
+
+.page{
+    @if $theme=='light'{
+        background-color: white;  
+        color: #444;
+     }
+     @else{
+        background-color: rgba(255, 255, 255, 0.39);  
+        color:red; 
+     }
+}
+
+$rounded:true;
+
+.shop-box{
+    @extend .main-box;
+    border-radius:if($rounded,6,null);
+    -webkit-border-radius:if($rounded,6,null);
+    -moz-border-radius:if($rounded,6,null);
+    -ms-border-radius:if($rounded,6,null);
+    -o-border-radius:if($rounded,6,null);
+}
+
+//  Elzero assignment 1
+//
+// First
+
+// .content > .box {
+//     padding: 15px;
+//   }
+//   .content > .box > .title {
+//     font-size: 18px;
+//   }
+//   .content .cat {
+//     padding: 15px;
+//   }
+//   .content.premium:before {
+//     content: "Premium Box";
+//   }
+//   .content.premium:hover {
+//     background-color: #eee;
+//   }
+
+// .content {
+//     >{
+//         .box{
+//             padding: 15px;
+//             > .title{
+//                 font-size: 18px;
+//             }
+//           }
+
+//     }
+//     .cat{
+//         padding: 15px;
+//     }
+//     &.premium{
+//        &:hover{
+//         background-color: #eee;
+//        }
+//        &::before{
+//         content: "Premium Box";
+//        }
+//     }
+// }
+
+//Second 
+
+
+// .class > {
+//     .child{
+//         padding: 10px;
+//     }
+// }
+
+// .class {
+//     >.child{
+//         padding: 10px;
+//     }
+// }
+// .class{
+//     >{
+//         .child{
+//             padding: 10px;
+//         }
+//     }
+// }
+
+//Third
+
+//   .class{
+//     font:{
+//         weight:bold;
+//         size: 20px;
+//     }
+//   }
+
+
+//fourth
+
+// .parent {
+//     & + .sibling {
+//       margin: auto {
+//         top: 10px;
+//       }
+//       & ~ .last {
+//         padding: 10px;
+//       }
+//     }
+//   }
+//   .parent + .sibling {
+//     margin: auto;
+//     margin-top: 10px;
+//   }
+//   .parent + .sibling ~ .last {
+//     padding: 10px;
+//   }
+  
+
+//fifth
+
+// .my-class{
+//     font-weight: bold;
+//     margin: 20px auto;
+//     .main-border{
+//         border: 1px solid #CCC
+//     }
+//     .widget{
+//         background-color: white;
+//         padding: 20px;
+//     }
+// }
+
+//sixth
+// %widget {
+//     background-color: white;
+//     padding: 20px;
+//   }
+//   %main-border {
+//     border: 1px solid #CCC
+//   }
+//   %my-class {
+//     font-weight: bold;
+//     margin: 20px auto;
+//   }
+
+// .my-class{
+//     @extend %widget;
+// }
+// .my-class{
+//     @extend %main-border;
+// }
+// .my-class{
+//     @extend %my-class;
+// }
+  
+
+//seventh
+
+// Needed Output
+
+//   .box {
+//     h2, p{
+//       font-size: 20px;
+//     }
+//   }
+
+//   @media (max-width: 575px) {
+//     .box{
+      
+//         h2 , p{
+//           font-size: 16px;
+//           span{
+//             font-weight: bold;
+//           }
+//         }
+//     }
+//   }
+
+
+//eighth
+
+// $red: #e91e63;
+// $green: #009688;
+
+// $link-color:$green;
+// $link-hover:$red;
+
+// // Do Not Edit Here
+// .box a {
+//   color: $link-color;
+//   &:hover {
+//     color: $link-hover;
+//   }
+// }
+
+//ninth
+
+//   .box{
+//     font-size: 20px;
+//     &-holder{
+//         width: 1000px;
+//         &-content{
+//            margin: auto;
+//         }
+//     }
+//   }

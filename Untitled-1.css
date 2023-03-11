@@ -1,0 +1,110 @@
+.parent {
+  font-weight: bold;
+}
+.parent .child {
+  font-size: 20px;
+}
+.parent .grand-child {
+  font-size: 15px;
+}
+
+.parent > .child {
+  color: green;
+}
+
+.parent > .child {
+  color: green;
+}
+.parent .test {
+  color: blue;
+}
+.parent + p {
+  font-size: 15px;
+}
+
+.parent > .element-one {
+  font-size: 10px;
+}
+.parent > .element-two {
+  font-size: 10px;
+}
+.parent .not-direct-child {
+  font-weight: bold;
+}
+
+.box .title {
+  font-size: 10px;
+}
+.box .description {
+  font-family: "Courier New", Courier, monospace;
+}
+.box.red {
+  color: red;
+}
+.box:hover {
+  background-color: yellow;
+}
+.box:hover .title {
+  font-size: larger;
+}
+:not(.box) {
+  font-weight: normal;
+}
+[dir=rtl] .box {
+  direction: rtl;
+}
+
+.box {
+  font-size: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  padding: 20px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.main-box, .shop-box, .article, .ads {
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+
+.ads {
+  font-size: 20px;
+  color: red;
+}
+
+.article {
+  font-size: 22px;
+  color: green;
+}
+
+.article1, .ads1 {
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+
+.ads1 {
+  font-size: 20px;
+  color: red;
+}
+
+.article1 {
+  font-size: 22px;
+  color: green;
+}
+
+.page {
+  background-color: white;
+  color: #444;
+}
+
+.shop-box {
+  border-radius: 6;
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  -ms-border-radius: 6;
+  -o-border-radius: 6;
+}/*# sourceMappingURL=Untitled-1.css.map */
