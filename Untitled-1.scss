@@ -417,4 +417,24 @@ $number:10;
 //Fourth
 
 
+$number: 10;
+$color: red;
+$theme: light;
+
+@if $number>5{
+  @if $color==red{
+      @if $theme==light{
+          .class {
+              color: red;
+            }
+      }
+  }  
+}
+
+
+//Sixth
+
+
+
+
 
