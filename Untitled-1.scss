@@ -359,3 +359,33 @@ $rounded:true;
 //         }
 //     }
 //   }
+
+//First
+
+$main: "school";
+$child: "box";
+$language: "ar"; // English
+$gap: 20px;
+
+
+.#{$main}{
+  padding: #{$gap};
+  @if $language=="en"{
+      direction:ltr;
+  }
+  @else{
+      direction:rtl;
+  }
+  margin-left: #{$gap};
+   .#{$main}-#{$child}{
+       padding:calc(20px / 2);
+   }
+   &:hover{
+       .#{$main}-#{$child}{
+           background-color: #eee;
+       }
+   }
+}
+
+//Second
+
