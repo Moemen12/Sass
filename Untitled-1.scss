@@ -435,6 +435,19 @@ $theme: light;
 //Sixth
 
 
+$number: 8;
+@if $number==8{
+    //Nothing
+}
 
+  .box {
+       @if $number == 10{
+           text-align:center;
+           background-color: #EEE;
+       }
+       @else if $number == 9{
+          background-color: #EEE;
+       }
+    }
 
 
