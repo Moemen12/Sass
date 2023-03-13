@@ -311,6 +311,7 @@
 //     @each $size in $sizes{
 //         $total : $total + $size;
 //     }
+<<<<<<< HEAD
 //     @return $total;
 // }
 
@@ -372,3 +373,98 @@
     font-size: 22px;
 }
 }
+=======
+//   }
+
+//First
+
+$main: "school";
+$child: "box";
+$language: "ar"; // English
+$gap: 20px;
+
+
+.#{$main}{
+  padding: #{$gap};
+  @if $language=="en"{
+      direction:ltr;
+  }
+  @else{
+      direction:rtl;
+  }
+  margin-left: #{$gap};
+   .#{$main}-#{$child}{
+       padding:calc(20px / 2);
+   }
+   &:hover{
+       .#{$main}-#{$child}{
+           background-color: #eee;
+       }
+   }
+}
+
+//Second
+
+// SASS Code
+$main-color: red;
+$alt-color: blue;
+
+// Needed Output
+/* Theme Version: 1.0 */
+/* Website Theme Main Color Is: #{$main-color} */
+/* Website Theme Alternate Color Is: #{$alt-color} */
+
+//Third
+$number:10;
+
+.class {
+@if $number>8 {
+    color:blue;
+}
+@else if $number>5{
+    color:green;
+}
+@else{
+    color :red;
+}
+
+}
+
+//Fourth
+
+
+$number: 10;
+$color: red;
+$theme: light;
+
+@if $number>5{
+  @if $color==red{
+      @if $theme==light{
+          .class {
+              color: red;
+            }
+      }
+  }  
+}
+
+
+//Sixth
+
+
+$number: 8;
+@if $number==8{
+    //Nothing
+}
+
+  .box {
+       @if $number == 10{
+           text-align:center;
+           background-color: #EEE;
+       }
+       @else if $number == 9{
+          background-color: #EEE;
+       }
+    }
+
+
+>>>>>>> 364fac9e30ae5c37ce5eb99d5de75f661fb9233c
